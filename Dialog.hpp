@@ -36,7 +36,9 @@ public:
       x = iScr % M_WIDTH;
       y = iScr / M_WIDTH;
       page = iMsg / SCR_SIZE;
-      page = iText / SCR_SIZE;
+      if (message[iMsg] == 0x20) {
+        continue;
+      }
       if (page == prevPage) {
         delay(m_cadence);
       } else {
